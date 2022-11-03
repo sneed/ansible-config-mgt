@@ -24,3 +24,17 @@
 - include_tasks: databases.yml
 - include_tasks: users.yml
 - include_tasks: replication.yml
+
+# Databases.
+mysql_databases:
+  - name: tooling
+    collation: utf8_general_ci
+    encoding: utf8
+    replicate: 1
+
+# Users.
+mysql_users:
+  - name: webaccess
+    host: 0.0.0.0
+    password: secret
+    priv: '*.*:ALL,GRANT'
