@@ -1,30 +1,30 @@
 ---
-- hosts: lb
-- name: Include dynamic variables 
-  import_playbook: ../static-assignments/common.yml 
-  include: ../dynamic-assignments/env-vars.yml
-  tags:
-    - always
+- hosts: db
+- name: database assignment
+  import_playbook: ../static-assignments/database.yml
 
-- name: Loadbalancers assignment
-  import_playbook: ../static-assignments/loadbalancers.yml
-  when: load_balancer_is_required
+- hosts: nginx
+- name: nginx assignment
+  import_playbook: ../static-assignments/nginx.yml
 
-# - hosts: db
-# - name: database assignment
-#   ansible.builtin.import_playbook: ../static-assignments/database.yml
+# - hosts: lb
+# - name: Include dynamic variables 
+#   import_playbook: ../static-assignments/common.yml 
+#   include: ../dynamic-assignments/env-vars.yml
+#   tags:
+#    - always
 
-# - hosts: nginx
-# - name: nginx assignment
-#   ansible.builtin.import_playbook: ../static-assignments/nginx.yml
+# - name: Loadbalancers assignment
+#   import_playbook: ../static-assignments/loadbalancers.yml
+#   when: load_balancer_is_required
 
 # - hosts: artifactory
 # - name: artifactory assignment
 #   ansible.builtin.import_playbook: ../static-assignments/artifactory.yml
 
-- hosts: sonar
-- name: sonar assignment
-  ansible.builtin.import_playbook: ../static-assignments/sonar.yml
+# - hosts: sonar
+# - name: sonar assignment
+#   ansible.builtin.import_playbook: ../static-assignments/sonar.yml
 
 # - hosts: todo
 # - name: Deploy the todo application
