@@ -1,4 +1,5 @@
 ---
+- name: install mysql role
 - hosts: db
   become: true
   roles:
