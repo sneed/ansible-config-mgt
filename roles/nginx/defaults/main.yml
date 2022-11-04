@@ -87,5 +87,5 @@ nginx_amplify_update_agent: false
 nginx_amplify_script_url: "https://github.com/nginxinc/nginx-amplify-agent/raw/master/packages/install.sh"
 nginx_amplify_script_path: "/tmp/install-amplify-agent.sh"
 
-enable_nginx_lb: false
-load_balancer_is_required: false
+#enable_nginx_lb: false
+#load_balancer_is_required: false
