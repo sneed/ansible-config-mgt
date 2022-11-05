@@ -1,11 +1,11 @@
 ---
-- hosts: db
-- name: database assignment
-  import_playbook: ../static-assignments/database.yml
+#- hosts: db
+#- name: database assignment
+#  import_playbook: ../static-assignments/database.yml
 
-- hosts: nginx
-- name: nginx assignment
-  import_playbook: ../static-assignments/nginx.yml
+#- hosts: nginx
+#- name: nginx assignment
+#  import_playbook: ../static-assignments/nginx.yml
 
 # - hosts: lb
 # - name: Include dynamic variables 
@@ -18,9 +18,9 @@
 #   import_playbook: ../static-assignments/loadbalancers.yml
 #   when: load_balancer_is_required
 
-# - hosts: artifactory
-# - name: artifactory assignment
-#   ansible.builtin.import_playbook: ../static-assignments/artifactory.yml
+  - hosts: artifactory
+  - name: artifactory assignment
+    ansible.builtin.import_playbook: ../static-assignments/artifactory.yml
 
 # - hosts: sonar
 # - name: sonar assignment
