@@ -7,5 +7,6 @@
 [sonarqube]
 <SonarQube-Private-IP-Address>
 
-[artifact_repository]
-<Artifact_repository-Private-IP-Address>
+[artifactory]
+172.31.87.164 ansible_ssh_user='ec2_user'
+
